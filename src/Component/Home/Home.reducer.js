@@ -18,7 +18,8 @@ export default handleActions(
 
     [ACTION_TYPES.SET_REQUESTED_FEATURES]: (state, { data } = {}) =>
       produce(state, (draft) => {
-        data.loading = false;
+        draft.loading = false;
+       data.products.forEach((data)=>{data.count=1})
         draft.DashboardProductData = data.products || [];
          draft.productDetails=data.products
       }),
@@ -37,6 +38,11 @@ export default handleActions(
     [ACTION_TYPES.SEARCH]: (state, { data } = {}) =>
       produce(state, (draft) => {
         draft.DashboardProductData = data
+      }),
+      [ACTION_TYPES.COUNT_TOTAL]: (state, { data }= {}) =>
+      produce(state, (draft) => {
+        
+        draft.addCart = data
       }),
   },
   initialState
