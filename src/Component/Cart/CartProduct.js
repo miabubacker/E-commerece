@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 
 export default function CartProduct(props) {
-  const { product, updateTotal,addCart,ticketsActions } = props;
-  const [count, setCount] = useState(1);
+  const { product, updateTotal,addCart,index,ticketsActions } = props;
   const increment = (price) => {
-    setCount(count + 1);
+    const vs = [...addCart];
+    vs[index] = { ...addCart[index], count: product.count+1 };
     updateTotal(price);
+    ticketsActions.CountAndTotal(vs)
   };
   const decrement = (price) => {
-    setCount(count - 1);
+    const vs = [...addCart];
+    vs[index] = { ...addCart[index], count: product.count -1 };
+    ticketsActions.CountAndTotal(vs)
     updateTotal(-price);
   };
    const removeFromCart=(productId)=>{
@@ -21,7 +24,7 @@ export default function CartProduct(props) {
         <div>{product.title}</div>
         <div>{product.brand}</div>
         <div>
-          price:{product.price} X {count}= {product.price * count}{" "}
+          price:{product.price} X {product.count}= {product.price * product.count}{" "}
         </div>
         <div>
           <button
@@ -31,9 +34,9 @@ export default function CartProduct(props) {
           >
             +
           </button>
-          {count}
+          {product.count}
           <button
-            onClick={() =>  {count>1&&
+            onClick={() =>  {product.count>1&&
               decrement(product.price);
             }}
           >

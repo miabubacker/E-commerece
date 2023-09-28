@@ -1,9 +1,8 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from '../Component/Home'
-import Dashboard from '../Component/Dashboard'
 
-export default function Routers( props) {
+export default function Routers() {
   return (
     <BrowserRouter>
     <Routes>
