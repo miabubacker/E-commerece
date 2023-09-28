@@ -11,6 +11,7 @@ export default function Cart(props) {
     //   price = price + s.price * s.count;
     // });
     // setTotal(price);
+    
       let totalPrice= addCart.map((data)=>data.price*data.count).reduce((a,b)=>a+b,0)
 setTotal(totalPrice)
 
