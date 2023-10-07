@@ -29,32 +29,36 @@ export default function Dashboard(props) {
     <React.Fragment>
       {!loading ? (
         <div>loading....</div>
-      ) : (
+      ) : (DashboardProductData.length>0?
         <div className="main">
-          {DashboardProductData?.map((s, index) => (
+          {DashboardProductData.map((s, index) => (
             <div
-              key={index}
-              role="button"
-              onClick={(e) => ViewProductDetails(e, s)}
+           
+               className="product"
             >
-              <div>{s.title}</div>
-              <div>{s.decribtion}</div>
-              <div style={{ width: "100%", height: "20rem" }}>
+           
+              <div className="title">{s.title}</div>
+              <div>{s.brand}</div>
+              <div style={{height: "16rem" }}>
                 <img src={s.thumbnail} />
               </div>
-              <div>{s.price}</div>
-              <div>
-                <button
+              {/* <div>{s.description}</div> */}
+              <div style={{margin:'0.5rem 0'}}>Price:<strong>{s.price}</strong></div>
+              <div className="btnContainer">
+                <button className="btn"
                   onClick={(e) => {
                     addtoCart(e, s);
                   }}
                 >
                   Add to Cart
                 </button>
+                <div key={index}
+              role="button" style={{fontSize:"1.2rem",cursor:'pointer'}}
+              onClick={(e) => ViewProductDetails(e, s)}>see More...</div>
               </div>
             </div>
           ))}
-        </div>
+        </div>:<div className="noFound">No found</div>
       )}
     </React.Fragment>
   );

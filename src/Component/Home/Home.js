@@ -8,13 +8,13 @@ import { useState } from 'react'
 
 export default function Home(props) {
   return (
-    <div>Home
-        <Header {...props}/>
+<React.Fragment>
+<Header {...props}/>
         <Routes>
             <Route path='/' element={<Dashboard {...props}/>}/>
             <Route path='product/:id' element={<Product {...props}/>}/>
             <Route path='/cart' element={<Cart {...props} />}/>
         </Routes>
-    </div>
+</React.Fragment>
   )
 }
