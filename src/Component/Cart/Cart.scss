@@ -1,0 +1,118 @@
+img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+}
+
+.parentCartContainer {
+      /* height: 92vh; */
+      padding: 1rem;
+      display: flex;
+      gap: 1rem;
+}
+
+.cartCard {
+      background: #FFFFFF;
+      padding: 1.3rem;
+      width: 75%;
+}
+
+.cartTitle {
+      font-weight: 400;
+      font-size: 1.7rem;
+      line-height: 36px;
+      border-bottom: 1px solid #DDDDDD;
+}
+
+.EMItotalPirice {
+      background: #FFFFFF;
+      padding: 1.3rem;
+      width: 20%;
+      height: fit-content;
+
+      .totalPrice {
+            font-weight: 400;
+            font-size: 1.7rem;
+            line-height: 20px;
+            color: #0f1111;
+
+            .rs {
+                  font-weight: bold;
+                  font-size: 1rem;
+            }
+      }
+
+      .proceedbuyBtn {
+            margin-top: 2rem;
+            background: #FFD814;
+            border-color: #FCD200;
+            height: 2rem;
+            text-align: center;
+            border-radius: 5px;
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 30px;
+
+      }
+}
+
+
+
+
+
+/*  CARTPRODUCT */
+.cartProductContainer {
+      display: flex;
+      border-bottom: 1px solid #DDDDDD;
+      padding: 0.8rem 0;
+      gap: 2rem;
+
+      .imgMain {
+            width: auto;
+            height: auto;
+            max-width: 15rem;
+            max-height: 10rem;
+      }
+
+      .aboutProduct {
+            font-weight: 400;
+            font-size: 1.4rem;
+            line-height: 23px;
+            color: #0f1111;
+            // width: auto;
+            // max-width: 25rem;
+            // white-space: nowrap; 
+            // overflow: hidden;
+            // text-overflow: ellipsis; 
+      }
+
+      .discountOff {
+            font-weight: 700;
+            font-size: 0.7rem;
+            line-height: 16px;
+            color: #ffffff;
+            background: #CC0C39;
+            width: 4rem;
+            padding: 0.4rem 0;
+            margin: 0.4rem 0;
+            text-align: center;
+            border-radius: 3px;
+      }
+
+      .buttonContainer {
+            display: flex;
+            margin-top: 0.5rem;
+            cursor: pointer;
+            gap: 2rem;
+
+            .countConatiner {
+                  display: flex;
+                  background: #E3E6E6;
+                  border-radius: 5px;
+                  padding: 0.2rem;
+                  width: 2.6rem;
+                  justify-content: space-between;
+            }
+      }
+
+}

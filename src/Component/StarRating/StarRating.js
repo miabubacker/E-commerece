@@ -6,9 +6,8 @@ export default function StarRating(props) {
   return (
   <React.Fragment>
           {[...Array(5)].map((star,index) => {   
-            console.log( parseInt(data))     
         return (         
-          <span className={index < parseInt(data) ? "on" : "off"}>&#9733;</span>        
+          <span key={index} className={index < parseInt(data) ? "on" : "off"}>&#9733;</span>        
         );
       })}
 
