@@ -29,7 +29,9 @@ import HomeReducer from './Home.reducer';
  }
   
  export const CountAndTotal=(payload)=>(dispatch,getState)=>{
-  
   dispatch({ type: ACTION_TYPES.COUNT_TOTAL, data:payload });
  }
   
+ export const Details=(payload)=>(dispatch,getState)=>{
+  dispatch({ type: ACTION_TYPES.DETAILS, data:payload });
+ }

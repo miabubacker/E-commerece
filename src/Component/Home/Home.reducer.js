@@ -7,6 +7,7 @@ const initialState = {
   loading: false,
   productDetails: [],
   addCart: [],
+details:[]
 };
 
 export default handleActions(
@@ -41,8 +42,12 @@ export default handleActions(
       }),
       [ACTION_TYPES.COUNT_TOTAL]: (state, { data }= {}) =>
       produce(state, (draft) => {
-        
         draft.addCart = data
+      }),
+  
+      [ACTION_TYPES.DETAILS]: (state, { data }= {}) =>
+      produce(state, (draft) => {
+        draft.details = [...state.details,data]
       }),
   },
   initialState

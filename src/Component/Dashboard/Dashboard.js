@@ -33,14 +33,14 @@ export default function Dashboard(props) {
         <div className="main">
           {DashboardProductData.map((s, index) => (
             <div
-           
+          key={index}
                className="product"
             >
            
               <div className="title">{s.title}</div>
               <div>{s.brand}</div>
               <div style={{height: "16rem" }}>
-                <img src={s.thumbnail} />
+                <img src={s.thumbnail} alt={s.thumbnail} />
               </div>
               {/* <div>{s.description}</div> */}
               <div style={{margin:'0.5rem 0'}}>Price:<strong>{s.price}</strong></div>

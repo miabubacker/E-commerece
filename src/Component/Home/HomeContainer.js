@@ -20,14 +20,8 @@ const mapStateToProps = ({
     DashboardProductData: _get(HomeReducer, 'DashboardProductData'),
     loading: _get(HomeReducer, 'loading'),
     productDetails: _get(HomeReducer, 'productDetails'),
-    addCart:_get(HomeReducer, 'addCart')
-    
-//   totalRequestedFeaures: _get(ticketsReducer, 'totalRequestedFeaures'),
-//   featureDropdownOptions: _get(ticketsReducer, 'featureDropdownOptions'),
-//   dealerUserOptions: _get(ticketsReducer, 'dealerUserOptions'),
-//   loadingRequestedFeatures: _get(ticketsReducer, 'loadingRequestedFeatures'),
-//   amDealersOption: _get(ticketsReducer, 'amDealersOption'),
-//   allUsersList: _get(usersReducer, 'allUsersList'),
+    addCart:_get(HomeReducer, 'addCart'),
+    details:_get(HomeReducer,'details')
 });
 
 export default compose(
