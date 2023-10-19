@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import "./Dashboard.css";
+import "./Dashboard.scss";
 import { useNavigate } from "react-router-dom";
+import StarRating from "../StarRating/StarRating";
 export default function Dashboard(props) {
   const { ticketsActions, DashboardProductData = [], loading, addCart } = props;
   useEffect(() => {
@@ -35,15 +36,15 @@ export default function Dashboard(props) {
             <div
           key={index}
                className="product"
+               onClick={(e) => ViewProductDetails(e, s)}
             >
-           
-              <div className="title">{s.title}</div>
-              <div>{s.brand}</div>
-              <div style={{height: "16rem" }}>
+              <div style={{height: "16rem",padding:'0.5rem' }}>
                 <img src={s.thumbnail} alt={s.thumbnail} />
               </div>
-              {/* <div>{s.description}</div> */}
+              <div style={{padding:'0.5rem'}}>
+              <div className="title">{s.title}</div>
               <div style={{margin:'0.5rem 0'}}>Price:<strong>{s.price}</strong></div>
+             <div><StarRating data={s.rating} /><span style={{margin:"0 0.5rem"}}>{s.rating}%</span></div>
               <div className="btnContainer">
                 <button className="btn"
                   onClick={(e) => {
@@ -53,8 +54,9 @@ export default function Dashboard(props) {
                   Add to Cart
                 </button>
                 <div key={index}
-              role="button" style={{fontSize:"1.2rem",cursor:'pointer'}}
+              role="button"  className='More'
               onClick={(e) => ViewProductDetails(e, s)}>see More...</div>
+              </div>
               </div>
             </div>
           ))}

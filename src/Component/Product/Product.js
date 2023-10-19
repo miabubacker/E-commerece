@@ -3,9 +3,11 @@ import { useParams } from "react-router-dom";
 import "./Product.scss";
 import StarRating from "../StarRating/StarRating";
 import ImgGalery from "./ImgGalery";
+import { useNavigate, Link } from "react-router-dom";
 export default function Product(props) {
   const param = useParams();
   const { ticketsActions, DashboardProductData, addCart } = props;
+  const navigate = useNavigate();
   const selectProduct = DashboardProductData.filter(
     (data) => data.id === parseInt(param.id)
   );
@@ -19,6 +21,11 @@ export default function Product(props) {
     } else {
       ticketsActions.addtoCart([...addCart, product]);
     }
+  };
+  const buyProcess = (e, selectProduct) => {
+    e.stopPropagation();
+    ticketsActions.Details(selectProduct);
+    navigate(`/BuyerForm`);
   };
 
   return (
@@ -38,16 +45,16 @@ export default function Product(props) {
                 </div>
                 {/* images */}
                 <div style={{width:'auto'}}>
-                  <div className="headerTitle"> Title:{data.title}</div>
-                  <div>Brand:{data.brand}</div>
-                  <div> Price:{data.price}</div>
-                  <div> Description:{data.description}</div>
-                  <div>Discount {data.discountPercentage}</div>
+                  <div className="headerTitle">{data.title}</div>
+                  <div className="brandName"><span className="brand"> Brand:</span> {data.brand}</div>
+                  <div className="brandName"> Price: <span className="brand">&#8377;</span> {data.price}</div>
+                  <div className="brandName"> Description:<span  style={{fontSize:'1.2rem',fontWeight:"500"}}>{data.description}</span></div>
+                  <div>Discount: <span className="brand">{data.discountPercentage}</span>%</div>
                   <div>
                    Rating:<StarRating data={data.rating} />
                   </div>
                   <div className="buttonContainer">
-                  <div className="buyButton">  <button >Buy Now</button></div>
+                  <div className="buyButton">  <button onClick={(e)=>{buyProcess(e,data)}} >Buy Now</button></div>
                    <div className="cartButton"> <button onClick={() => addToCart(data)}>Add to Cart</button></div>
                   </div>
                 </div>

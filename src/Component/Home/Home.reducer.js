@@ -7,7 +7,7 @@ const initialState = {
   loading: false,
   productDetails: [],
   addCart: [],
-details:[]
+details:{}
 };
 
 export default handleActions(
@@ -47,7 +47,7 @@ export default handleActions(
   
       [ACTION_TYPES.DETAILS]: (state, { data }= {}) =>
       produce(state, (draft) => {
-        draft.details = [...state.details,data]
+        draft.details = data
       }),
   },
   initialState
