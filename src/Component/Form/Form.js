@@ -1,13 +1,13 @@
 import React from 'react'
 import './Form.scss'
 export default function Form(props) {
-const{details}=props
+const{addCart,details}=props
     // const handleMobileNumberChange = (e) => {
     //     const value = e.target.value;
     //     setMobileNumber(value);
     //     setIsValid(/^\d{10}$/.test(value)); // Validation using regex for a 10-digit mobile number
     //   };
-     console.log(props)
+  console.log(details)
   return (
 <React.Fragment>
   <>
@@ -42,8 +42,12 @@ const{details}=props
         </div>
       </form>
       <div>
-        <h4>BUY list</h4>
-        <>{details.map((product)=><>{product.name}{product.title}</>)}</>
+        <h4>Cart list</h4>
+        <>{addCart.map((product)=><>{product.name}{product.title}</>)}</>
+      </div>
+      <div>
+        <h4>details</h4>
+        <>{details.name}{details.title}</>
       </div>
       </div>
       </>

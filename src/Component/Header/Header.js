@@ -14,7 +14,7 @@ export default function Header(props) {
 
   return (
     <React.Fragment>
-      <div className="parent">
+      <div className="headerparent">
       <div className="headerContainer">
          <div className="homeIcon"> 
           <Link to={"/"}>

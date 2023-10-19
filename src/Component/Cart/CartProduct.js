@@ -37,7 +37,7 @@ export default function CartProduct(props) {
         <div>
           <div className="aboutProduct">{product.description}</div>
           <div className="discountOff">{product.discountPercentage}% off</div>
-          <div> Brand:{product.brand}</div>
+          <div><span className="brand">Brand:</span>{product.brand}</div>
           <div>
             price:{product.price} X {product.count}=
             {product.price * product.count}

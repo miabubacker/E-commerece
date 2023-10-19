@@ -32,7 +32,7 @@ img {
 
       .totalPrice {
             font-weight: 400;
-            font-size: 1.7rem;
+            font-size: 1.4rem;
             line-height: 20px;
             color: #0f1111;
 
@@ -66,7 +66,10 @@ img {
       border-bottom: 1px solid #DDDDDD;
       padding: 0.8rem 0;
       gap: 2rem;
-
+.brand{
+      font-weight: 600;
+      font-size: 1.2rem;
+}
       .imgMain {
             width: auto;
             height: auto;
@@ -116,3 +119,21 @@ img {
       }
 
 }
+
+
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+      .cartTitle{
+             font-size: small;
+      }
+      .EMItotalPirice{ .totalPrice{font-size: small;}.proceedbuyBtn{font-size: small;}}
+ }
+ 
+ /* 481px — 768px: iPads, Tablets */
+ @media screen and (min-width: 481px) and (max-width: 768px) {
+      .cartTitle{
+            font-size: small;
+     }
+     .EMItotalPirice{ .totalPrice{font-size: small;}.proceedbuyBtn{font-size: small;}}
+ }
+     

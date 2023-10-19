@@ -22,10 +22,11 @@ export default function Cart(props) {
     setTotal(total + num);
   };
   const buyProcess = (e, selectProduct) => {
-    e.stopPropagation();
-    ticketsActions.Details(selectProduct);
+     console.log(...selectProduct)
+    ticketsActions.Details({});
     navigate(`/BuyerForm`);
   };
+
   return (
     <React.Fragment>
       <div  className="parentCartContainer">
@@ -66,7 +67,7 @@ export default function Cart(props) {
         </>
         <div className="EMItotalPirice">
            <div className="totalPrice"> sum total: <span className="rs">&#8377;</span>{total}</div>
-           <div className="proceedbuyBtn" onClick={(e)=>{buyProcess(e,)}}>Proceed to Buy</div>
+           <div className="proceedbuyBtn" onClick={(e)=>{buyProcess(e,addCart)}}>Proceed to Buy</div>
            </div>
       </div>
     </React.Fragment>
